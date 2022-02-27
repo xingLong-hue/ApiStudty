@@ -1,0 +1,33 @@
+# 基于node+express+mysql 后端接口的设计与实现
+1、安装环境
+     nodejs
+     npm
+2、安装express
+    npm install express -g
+    npm install express-generator   -g   (因为这个模块独立出来了，要单独安装)
+3、建立接口项目文件夹
+    express 项目接口文件名
+    例如： express  apiLearn      (此时在命令窗口运行的目录下多了个apilearn文件目录)
+4、初始化
+     npm install
+5、运行检查 
+     npm start    (默认端口运行在：3000端口)
+6、原来项目是运行在bin目录下的www，现在要让它运行到app.js
+     修改的操作：
+     将下面代码放到app.js
+      var http = require('http');
+      var server = http.createServer(app);
+      server.listen(‘3000’，（）=>{console.log("server runing at 3000......")});
+      //往外暴露语句删除
+      module.exports = app;
+    运行检查是否正常：node app.js
+
+7、上一步运行成功，此时可以删除bin文件了
+8、安装mysql
+     npm install mysql --save
+
+
+
+
+
+
